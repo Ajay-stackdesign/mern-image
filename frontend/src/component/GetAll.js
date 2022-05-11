@@ -1,6 +1,7 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { clearErrors, getAllUpload } from '../action/uploadAction'
 import Upload from "./component/Upload.js"
 
@@ -19,6 +20,7 @@ const GetAll = () => {
     }, [alert, dispatch, error])
     return (
         <Fragment>
+            <button><Link to="/upload">Create image </Link></button>
             {loading ? "something went wrong" : (
                 <Fragment>
                     {uploads &&
